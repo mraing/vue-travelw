@@ -4,7 +4,17 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// 引入第三方库（解决移动端点击延迟）
+import fastClick from 'fastClick'
+
+// 引入基本样式
+import './assets/stylecss/reset.css'
+import './assets/stylecss/border.css'
+
 Vue.config.productionTip = false
+
+// 引入第三方库（解决移动端300ms点击延迟）
+fastClick.attach(document.body)
 
 /* eslint-disable no-new */
 new Vue({
