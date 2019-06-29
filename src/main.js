@@ -8,8 +8,8 @@ import router from './router'
 import fastClick from 'fastClick'
 
 // 引入基本样式
-import './assets/stylecss/reset.css'
-import './assets/stylecss/border.css'
+import 'styles/reset.css'
+import 'styles/border.css'
 
 Vue.config.productionTip = false
 
