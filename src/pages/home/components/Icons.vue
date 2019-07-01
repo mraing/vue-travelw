@@ -6,17 +6,25 @@
     </div>
 </template>
 
-<script> 
+<script>
 export default {
-    data () {
-        return {
-            iconsList:[ {
-                id: '0001',
-                title: '热门',
-                imgUrl: 'https://dwz.cn/dHCQaqIi'
-            } ]
-        }
+  data () {
+    return {
+      iconsList: [{
+        id: '0001',
+        title: '景点门票',
+        imgUrl: 'https://dwz.cn/dHCQaqIi'
+      }, {
+        id: '0002',
+        title: '天门山公园',
+        imgUrl: 'https://dwz.cn/0S6XpALd'
+      }, {
+        id: '0003',
+        title: '长沙必游',
+        imgUrl: 'https://dwz.cn/XNfnbImY'
+      }]
     }
+  }
 }
 </script>
 
