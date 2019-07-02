@@ -13,7 +13,6 @@
         <div class="icon-pagination-content">
           <div class="swiper-pagination"  slot="pagination"></div>
         </div>
-       
     </div>
 </template>
 
