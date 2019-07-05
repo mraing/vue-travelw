@@ -35,6 +35,8 @@ export default {
 <style lang="stylus" scoped>
 .wrapper >>> .swiper-pagination-bullet-active
   background #fff
+.wrapper >>> .swiper-pagination-bullet
+  // bottom .32rem
 .wrapper
   position relative
   overflow hidden
