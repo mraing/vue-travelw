@@ -13,7 +13,6 @@
         <div class="icon-pagination-content">
           <div class="swiper-pagination"  slot="pagination"></div>
         </div>
-       
     </div>
 </template>
 
@@ -82,25 +81,31 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl';
-  @import '~styles/mixins.styl';
+@import '~styles/mixins.styl';
 .icons >>> .swiper-container
   height 0
   padding-bottom 50%
-.icon-pagination-content
-  text-align center
+.icons >>> .swiper-pagination
+  position relative
  .icon-pagination-content >>> .swiper-pagination-bullet
     margin 0 .1rem
     width .12rem
     height .12rem
   .icon-pagination-content >>> .swiper-pagination-bullet-active
     background $bgcolor
+.icons
+  position relative
+  margin-top .1rem
+  .icon-pagination-content
+    position relative
+    overflow hidden
 .icon
-  overflow hidden
   position relative
   float left
   width 25%
   height 0
   padding-bottom 25%
+  overflow hidden
   .icon-img
     position absolute
     top 0
