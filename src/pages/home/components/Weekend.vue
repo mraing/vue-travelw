@@ -2,7 +2,7 @@
     <div>
         <div class="title">周末去哪儿</div>
         <ul>
-            <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
+            <li class="item border-bottom" v-for="item in list" :key="item.id">
                 <div class="item-img-warpper"><img class="item-img" :src="item.imgUrl" /></div>
                 <div class="item-info">
                   <p class="item-title">{{item.title}}</p>
@@ -16,28 +16,11 @@
 <script>
 export default {
   name: 'HomeWeekend',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'https://dwz.cn/CFvS7jBs',
-          title: '情侣约会圣地',
-          desc: '你听，鸟语！你闻，花香！你听，海浪。你看，我的对面，是你……'
-        },
-        {
-          id: '0002',
-          imgUrl: 'https://dwz.cn/CFvS7jBs',
-          title: '情侣约会圣地',
-          desc: '你听，鸟语！你闻，花香！你听，海浪。你看，我的对面，是你……'
-        },
-        {
-          id: '0003',
-          imgUrl: 'https://dwz.cn/CFvS7jBs',
-          title: '情侣约会圣地',
-          desc: '你听，鸟语！你闻，花香！你听，海浪。你看，我的对面，是你……'
-        }
-      ]
     }
   }
 }
@@ -53,7 +36,7 @@ export default {
 .item-img-warpper
   position relative
   height 0
-  padding-top 33.9%
+  padding-top 37.08%
   overflow hidden
   .item-img
     position absolute

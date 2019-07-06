@@ -2,7 +2,7 @@
     <div>
         <div class="title">推荐栏目</div>
         <ul>
-            <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
+            <li class="item border-bottom" v-for="item in list" :key="item.id">
                 <img class="item-img" :src="item.imgUrl" />
                 <div class="item-info">
                   <p class="item-title">{{item.title}}</p>
@@ -16,28 +16,12 @@
 
 <script>
 export default {
+  name: 'HomeRecommend',
+  props: {
+    list: Array
+  },
   data () {
     return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'https://dwz.cn/4JETft2C',
-          title: '橘子洲',
-          desc: '橘子洲'
-        },
-        {
-          id: '0002',
-          imgUrl: 'https://dwz.cn/4JETft2C',
-          title: '橘子洲',
-          desc: '橘子洲'
-        },
-        {
-          id: '0003',
-          imgUrl: 'https://dwz.cn/4JETft2C',
-          title: '橘子洲',
-          desc: '橘子洲'
-        }
-      ]
     }
   }
 }

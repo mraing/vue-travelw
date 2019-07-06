@@ -4,7 +4,7 @@
           <swiper-slide v-for="(page, index) in pages" :key="index">
             <div class="icon" v-for="items in page" :key="items.id">
                 <div class="icon-img">
-                  <img class="icon-img-content" :src="items.imgUrl" :alt="items.title" />
+                  <img class="icon-img-content" :src="items.imgUrl" />
                 </div>
                 <div class="icon-desc">{{ items.desc }}</div>
             </div>
@@ -18,55 +18,22 @@
 
 <script>
 export default {
+  name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
         autoplay: false
-      },
-      iconsList: [{
-        id: '0001',
-        desc: '景点门票',
-        imgUrl: 'https://dwz.cn/dHCQaqIi'
-      }, {
-        id: '0002',
-        desc: '天门山公园',
-        imgUrl: 'https://dwz.cn/0S6XpALd'
-      }, {
-        id: '0003',
-        desc: '长沙必游',
-        imgUrl: 'https://dwz.cn/XNfnbImY'
-      }, {
-        id: '0004',
-        desc: '水上乐园',
-        imgUrl: 'https://dwz.cn/OtIu1ver'
-      }, {
-        id: '0005',
-        desc: '游乐场',
-        imgUrl: 'https://dwz.cn/zxHsLPSF'
-      }, {
-        id: '0006',
-        desc: '动植物园',
-        imgUrl: 'https://dwz.cn/qinzr4r1'
-      }, {
-        id: '0007',
-        desc: '自然风光',
-        imgUrl: 'https://dwz.cn/KbVtQg7S'
-      }, {
-        id: '0008',
-        desc: '湘西凤凰',
-        imgUrl: 'https://dwz.cn/EkpIP6oB'
-      }, {
-        id: '0009',
-        desc: '自然风光',
-        imgUrl: 'https://dwz.cn/KbVtQg7S'
-      }]
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.iconsList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

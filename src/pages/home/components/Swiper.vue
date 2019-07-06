@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption" class="wrapper-touch">
+    <swiper :options="swiperOption" class="wrapper-touch" v-if="showSiper">
     <!-- slides -->
-    <swiper-slide v-for="items in swoperList" :key="items.id"><img class="swiper-img" :src="items.imgUrl" :alt="items.imgAlt" /></swiper-slide>
+    <swiper-slide v-for="items in list" :key="items.id"><img class="swiper-img" :src="items.imgUrl" /></swiper-slide>
     <!-- Optional controls -->
     <div class="swiper-pagination"  slot="pagination"></div>
   </swiper>
@@ -12,21 +12,20 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
         loop: true
-      },
-      swoperList: [ {
-        id: '0001',
-        imgUrl: 'https://dwz.cn/4uPKTU30',
-        imgAlt: '张家界'
-      }, {
-        id: '0002',
-        imgUrl: 'https://dwz.cn/gKlMptiH',
-        imgAlt: '天门山'
-      }]
+      }
+    }
+  },
+  computed: {
+    showSiper () {
+      return this.list.length
     }
   }
 }
@@ -42,7 +41,7 @@ export default {
   overflow hidden
   width 100%
   height 0
-  padding-bottom 26.66%
+  padding-bottom 31.25%
   background #eee
   .swiper-img
     width 100%
