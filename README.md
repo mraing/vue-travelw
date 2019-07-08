@@ -18,7 +18,7 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-+ 使用 stylus
-+ 引用 vue-awesome-swiper
++ 使用 stylus 预加载样式
++ 引用 vue-awesome-swiper 轮播效果
++ 使用axios，请求 AJAX 数据
++ 使用better-scroll用作页面的区域滚动
