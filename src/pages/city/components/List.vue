@@ -19,7 +19,7 @@
           </div>
         </div>
         <!-- 渲染城市列表 -->
-        <div class="area" v-for="(alphabet, key) in cities" :key="key">
+        <div class="area" v-for="(alphabet, key) in cities" :key="key" :ref="key">
           <div class="title border-bottom">{{key}}</div>
           <div class="item-list">
             <div class="item border-bottom" v-for="citits in alphabet" :key="citits.id">{{citits.name}}</div>
@@ -35,12 +35,23 @@ export default {
   name: 'CityList',
   props: {
     cities: Object,
-    hot: Array
+    hot: Array,
+    letter: String
   },
   data () {
     return {}
   },
   methods: {
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        const elment = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(elment)
+        // console.log(elment)
+      }
+      console.log(this.letter)
+    }
   },
   mounted () {
     this.scroll = new BScroll(this.$refs.wrapper)

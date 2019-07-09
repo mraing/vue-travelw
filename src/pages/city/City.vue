@@ -2,8 +2,17 @@
     <div>
       <city-header></city-header>
       <city-search></city-search>
-      <city-list :cities="cities" :hot="hotCities"></city-list>
-      <city-alphabet :cities="cities"></city-alphabet>
+      <!-- 城市列表 -->
+      <city-list
+        :cities= "cities"
+        :hot= "hotCities"
+        :letter= "letter"
+      ></city-list>
+      <!-- 字母表 -->
+      <city-alphabet
+        :cities= "cities"
+        @change= "handleChange"
+      ></city-alphabet>
     </div>
 </template>
 
@@ -18,7 +27,8 @@ export default {
   data () {
     return {
       cities: {},
-      hotCities: []
+      hotCities: [],
+      letter: ''
     }
   },
   components: {
@@ -38,6 +48,10 @@ export default {
         this.cities = data.cities
         this.hotCities = data.hotCities
       }
+    },
+    // 接收来自 Aplhabet 组件的参数
+    handleChange (letter) {
+      this.letter = letter
     }
   },
   mounted () {
