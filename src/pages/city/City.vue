@@ -1,7 +1,11 @@
 <template>
     <div>
       <city-header></city-header>
-      <city-search></city-search>
+      <!-- 搜索框 -->
+      <city-search
+        :cities="cities"
+      >
+      </city-search>
       <!-- 城市列表 -->
       <city-list
         :cities= "cities"
