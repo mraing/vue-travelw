@@ -14,12 +14,14 @@ import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
-// 引入 axios
+// 引入 axios vuex
 import axios from 'axios'
+// import {mapState} from 'vuex'
 export default {
   name: 'Home',
   data () {
     return {
+      lastCity: '',
       swiperList: [],
       iconList: [],
       recommendList: [],
@@ -27,19 +29,24 @@ export default {
     }
   },
   components: {
-    // 'HomeHeader': HomeHeader,
-    // 'HomeSwiper': HomeSwiper,
-    // 'HomeIcons': HomeIcons,
-    // 'HomeRecommend': HomeRecommend
     HomeHeader,
     HomeSwiper,
     HomeIcons,
     HomeRecommend,
     HomeWeekend
   },
+  computed: {
+    city: {
+      get () {
+        return this.$store.state.city
+      },
+      set (value) {
+      }
+    }
+  },
   methods: {
     getHomeInfo () {
-      axios.get('/static/mock/index.json').then(this.getHomeInfoSucc)
+      axios.get('/static/mock/index.json?city=' + this.city).then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
       res = res.data
@@ -51,11 +58,17 @@ export default {
         this.recommendList = data.recommendList
         this.weekendList = data.weekendList
       }
-      // console.log(res)
     }
   },
   mounted () {
+    this.lastCity = this.city
     this.getHomeInfo()
+  },
+  activated () {
+    if (this.lastCity !== this.city) {
+      this.lastCity = this.city
+      this.getHomeInfo()
+    }
   }
 }
 </script>
