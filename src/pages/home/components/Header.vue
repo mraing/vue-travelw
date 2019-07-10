@@ -15,14 +15,15 @@
 </template>
 
 <script>
+import {mapState, mapGetters} from 'vuex'
 export default {
   name: 'HomeHeader',
-  props: {
-    city: String
-  },
   data () {
-    return {
-    }
+    return {}
+  },
+  computed: {
+    ...mapState(['city']),
+    ...mapGetters(['doubleCity'])
   }
 }
 </script>

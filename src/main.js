@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// 引入 vuex
+import store from './store'
+
 // 引入第三方库（解决移动端点击延迟）
 import fastClick from 'fastClick'
 
@@ -29,6 +32,7 @@ fastClick.attach(document.body)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

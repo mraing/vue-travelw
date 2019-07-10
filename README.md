@@ -19,6 +19,7 @@ npm run build --report
 ```
 
 + 使用 stylus 预加载样式
-+ 引用 vue-awesome-swiper 轮播效果
-+ 使用axios，请求 AJAX 数据
-+ 使用better-scroll用作页面的区域滚动
++ 使用 vue-awesome-swiper 轮播效果
++ 使用 axios 请求 AJAX 数据
++ 使用 better-scroll 用作页面的区域滚动
++ 使用 Vuex 进行数据的交互
