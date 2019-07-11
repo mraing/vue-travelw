@@ -47,9 +47,14 @@ export default {
       }
     }
   },
+  // 当启用了 keep-alive 的时候，会多出这个的一样生命周期函数
   activated () {
     // 监听scroll是否发生了变化
     window.addEventListener('scroll', this.handleScroll)
+  },
+  // 当页面被隐藏或者切换时，会多出这样的一个函数，解绑绑定的监听事件
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
