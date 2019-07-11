@@ -23,3 +23,4 @@ npm run build --report
 + 使用 axios 请求 AJAX 数据
 + 使用 better-scroll 用作页面的区域滚动
 + 使用 Vuex 进行数据的交互
++ router-link : tag 属性，以及路由传参
