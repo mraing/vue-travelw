@@ -20,6 +20,9 @@ import 'swiper/dist/css/swiper.css'
 import 'styles/reset.css'
 import 'styles/border.css'
 
+// 引入 babel-polyfill
+import 'babel-polyfill'
+
 Vue.config.productionTip = false
 
 // 使用轮播图
