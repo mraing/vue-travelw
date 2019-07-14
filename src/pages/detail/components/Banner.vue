@@ -2,18 +2,18 @@
   <div>
     <!-- 头部 -->
     <div class="banner" @click="handleShowGallary">
-      <img class="banner-img" src="https://dwz.cn/pLP4BVul" />
+      <img class="banner-img" :src="bannerImg" />
       <div class="banner-info">
         <div class="banner-number">
           <span class="iconfont bannner-icon">&#xe6bf;</span>
-          10
+          {{bannerImgs.length}}
         </div>
-        <div class="banner-title">故宫(AAAAA景区)</div>
+        <div class="banner-title">{{sightName}}</div>
       </div>
     </div>
     <!-- 画廊 -->
     <common-gallary
-      :imgs="imgs"
+      :imgs="bannerImgs"
       v-show="showGallary"
       @close="handleHidenGallary"
     ></common-gallary>
@@ -24,10 +24,14 @@
 import CommonGallary from 'common/gallary/Gallary'
 export default {
   name: 'DetailBanner',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    bannerImgs: Array
+  },
   data () {
     return {
-      showGallary: false,
-      imgs: ['https://dwz.cn/wVRhRCsu', 'https://dwz.cn/wVRhRCsu']
+      showGallary: false
     }
   },
   components: {
